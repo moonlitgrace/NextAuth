@@ -102,7 +102,6 @@ export const AuthProvider = ({ children }) => {
         if (response.ok) {
             const data = await response.json()
             setIsLoging(false)
-            console.log(data)
             setUser(data.user)
             setIsAuthenticated(true)
             successToast('You have been successfully logged in')
@@ -132,13 +131,11 @@ export const AuthProvider = ({ children }) => {
         })
         const data = await response.json()
         if (response.ok) {
-            console.log(data)
             setIsRegistering(false)
             successToast('Registration success, please log in')
             setShowAuthModal(true)
             setLoginView(true)
         } else {
-            console.log(response, data)
             setIsRegistering(false)
             errorToast(data.email || data.password1 || data.password2 || data.non_field_errors)
         }
@@ -156,7 +153,6 @@ export const AuthProvider = ({ children }) => {
         })
         if (response.ok) {
             const data = await response.json()
-            console.log(data)
             setUser({})
             setIsAuthenticated(false)
             successToast('Logout success')
@@ -241,7 +237,6 @@ export const AuthProvider = ({ children }) => {
             })
         })
         const data = await response.json()
-        console.log(response, data)
         if (response.ok) {
             setIsAuthenticated(true)
             setUser(data.user)
