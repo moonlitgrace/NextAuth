@@ -14,7 +14,7 @@ export const Loading = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{
-                    duration: 0.2
+                    duration: 0.1
                 }}
                 className="loading_container w-screen h-screen flex items-center justify-center z-50 absolute inset-0 bg-black/75">
                 <div className="loading_box flex flex-col items-center justify-center">

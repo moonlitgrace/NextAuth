@@ -162,8 +162,9 @@ const Index = () => {
           {showAuthModal && <AuthModal />}
         </AnimatePresence>
       </div>
-
-      {loading && <Loading />}
+      <AnimatePresence>
+        {loading && <Loading />}
+      </AnimatePresence>
     </>
   )
 }
