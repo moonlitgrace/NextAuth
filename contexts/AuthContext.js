@@ -272,6 +272,7 @@ export const AuthProvider = ({ children }) => {
             successToast('Thanks, your feedback submitted')
         } else {
             setReviewSending(false)
+            errorToast('Oops, something seems wrong')
         }
     }
 
