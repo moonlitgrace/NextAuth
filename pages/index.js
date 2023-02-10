@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { AuthContext } from '@/contexts/AuthContext'
 import { AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import toast from 'react-hot-toast'
 
 // import icons
 import { BsStars } from 'react-icons/bs'
@@ -13,7 +12,7 @@ import { IoMdSend } from 'react-icons/io'
 import { ChangePassword } from '@/components/common/ChangePassword'
 import { AuthModal } from '@/components/common/AuthModal'
 
-const index = () => {
+const Index = () => {
 
   const {
     logoutUser,
@@ -155,4 +154,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
