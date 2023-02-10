@@ -13,6 +13,8 @@ import { ChangePassword } from '@/components/common/ChangePassword'
 import { AuthModal } from '@/components/common/AuthModal'
 import { BeatLoader } from 'react-spinners'
 import Image from 'next/image'
+import HomeSvg from '@/public/home_page.svg'
+import ViteSvg from '@/public/vite.svg'
 
 const Index = () => {
 
@@ -25,15 +27,16 @@ const Index = () => {
     showAuthModal,
     isAuthenticated,
     githubLogin,
+    reviewSending,
+    feedbackSubmit,
   } = useContext(AuthContext)
 
   const [review, setReview] = useState('')
-  const [reviewSending, setReviewSending] = useState(false)
 
   // works on feedback submit
   const handleReviewSubmit = (e) => {
     e.preventDefault()
-    setReviewSending(true)
+    feedbackSubmit(review)
   }
 
   useEffect(() => {
@@ -93,7 +96,7 @@ const Index = () => {
         <div className="home_box flex items-start justify-center gap-10 mt-20">
           <div className="home_left_sec text-[#333333]">
             <div className='flex items-center gap-5'>
-              <Image src="/vite.svg" alt="nextAuth logo" className='w-12 h-12' />
+              <Image src={ViteSvg} alt="nextAuth logo" className='w-12 h-12' />
               <h1 className='text-5xl font-extrabold'>
                 <span className='text-[#6C63FF]'>Next</span>
                 Auth
@@ -144,7 +147,7 @@ const Index = () => {
             </div>
           </div>
           <div className="home_image_sec">
-            <Image className='w-[30rem]' src='/home_page.svg' alt="Home page svg" />
+            <Image className='w-[30rem]' src={HomeSvg} alt="Home page svg" />
           </div>
         </div>
         <AnimatePresence>

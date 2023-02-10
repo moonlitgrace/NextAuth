@@ -7,6 +7,7 @@ import { useContext } from 'react'
 import { AuthContext } from '@/contexts/AuthContext'
 import { BeatLoader } from 'react-spinners'
 import Image from 'next/image'
+import ChangePassSvg from '@/public/change_password.svg'
 
 export const ChangePassword = () => {
 
@@ -93,7 +94,7 @@ export const ChangePassword = () => {
                 {/** illustration section */}
                 <div className="illu_container w-1/2 flex flex-col items-end justify-between">
                     <CgClose onClick={toggleChangePasswordView} size={22} className='stroke-1 opacity-50 hover:opacity-75 duration-100 cursor-pointer' />
-                    <Image src='/change_password.svg' className='w-auto h-auto' alt="Illustration" />
+                    <Image src={ChangePassSvg} className='w-auto h-auto' alt="Illustration" />
                 </div>
             </div>
         </motion.div>

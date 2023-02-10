@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }) => {
     const [isLoging, setIsLoging] = useState(false)
     const [isPassChanging, setIsPassChanging] = useState(false)
     const [isRegistering, setIsRegistering] = useState(false)
+    const [reviewSending, setReviewSending] = useState(false)
 
 
     const [googleAuthStarted, setGoogleAuthStarted] = useState(false)
@@ -157,13 +158,13 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(false)
             successToast('Logout success')
             setShowAuthModal(true)
-            if (typeof window !== "undefined") { 
-                window.history.replaceState(null, '', '/') 
+            if (typeof window !== "undefined") {
+                window.history.replaceState(null, '', '/')
             }
         } else {
             errorToast('Oops ! something went wrong')
-            if (typeof window !== "undefined") { 
-                window.history.replaceState(null, '', '/') 
+            if (typeof window !== "undefined") {
+                window.history.replaceState(null, '', '/')
             }
         }
     }
@@ -245,10 +246,32 @@ export const AuthProvider = ({ children }) => {
             setShowAuthModal(false)
         } else {
             setGithubAuthStarted(false)
-            if (typeof window !== "undefined") { 
-                window.history.replaceState(null, '', '/') 
+            if (typeof window !== "undefined") {
+                window.history.replaceState(null, '', '/')
             }
             errorToast(data.non_field_errors)
+        }
+    }
+
+    // feedback submit
+    const feedbackSubmit = async (review) => {
+        setReviewSending(true)
+        const response = await fetch(`${API_URL}api/new-feedback/`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Access-Control-Allow-Credentials': 'true',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                body: review
+            })
+        })
+        if (response.ok) {
+            setReviewSending(false)
+            successToast('Thanks, your feedback submitted')
+        } else {
+            setReviewSending(false)
         }
     }
 
@@ -293,6 +316,9 @@ export const AuthProvider = ({ children }) => {
         // change password submit
         isPassChanging: isPassChanging,
         setIsPassChanging: setIsPassChanging,
+        // feedback submit
+        feedbackSubmit: feedbackSubmit,
+        reviewSending: reviewSending,
         // login view
         loginView: loginView,
         // toggle between signup and login

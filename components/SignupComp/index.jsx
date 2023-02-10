@@ -6,6 +6,7 @@ import { AuthMethods } from '../common/AuthMethods'
 import { BeatLoader } from 'react-spinners'
 import { AuthContext } from '@/contexts/AuthContext'
 import Image from 'next/image'
+import ViteSvg from '@/public/vite.svg'
 
 export const SignupComp = () => {
 
@@ -37,7 +38,7 @@ export const SignupComp = () => {
             <div className='w-3/4'>
                 <div className="header w-full">
                     <div className="logo flex items-center gap-2">
-                        <Image className='w-5' src='/vite.svg' alt="" />
+                        <Image className='w-5' src={ViteSvg} alt="" />
                         <h1 className='font-semibold text-[#075BDB]'>NextAuth</h1>
                     </div>
                     <div className="intro mt-4">

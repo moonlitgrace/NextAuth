@@ -55,7 +55,7 @@ export const AuthMethods = () => {
                 }
             </div>
 
-            {/** facebook login btn */}
+            {/** github login btn */}
             <a style={{ color: 'inherit', textDecoration: 'none' }} onClick={() => setGithubAuthStarted(true)} href={`https://github.com/login/oauth/authorize?scope=user:email&client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_URL}`} className="github flex items-center justify-center border border-b-2 h-[2.9rem] px-5 rounded-lg w-1/2 cursor-pointer hover:bg-stone-100 duration-100">
                 {
                     !githubAuthStarted ?
