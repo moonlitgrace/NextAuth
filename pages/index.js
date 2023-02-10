@@ -15,10 +15,12 @@ import { BeatLoader } from 'react-spinners'
 import Image from 'next/image'
 import HomeSvg from '@/public/home_page.svg'
 import ViteSvg from '@/public/vite.svg'
+import { Loading } from '@/components/common/Loading'
 
 const Index = () => {
 
   const {
+    loading,
     logoutUser,
     user,
     toggleChangePasswordView,
@@ -60,16 +62,16 @@ const Index = () => {
         <meta name="author" content="Suneeth"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
-      <div className="home_container flex flex-col items-center relative h-screen w-screen">
+      <div className="home_container flex flex-col items-center relative h-screen w-screen z-40">
         <div className="navabr bg-[#333333] p-5 flex justify-between items-center text-white w-full">
           <div className="logo flex items-center gap-10">
             <h2 className='text-[1.3rem] font-bold'>NextAuth</h2>
             <Link
               href='/'
-              className='opacity-75 hover:opacity-100 duration-100'
+              className='md:block hidden opacity-75 hover:opacity-100 duration-100'
             >Github</Link>
           </div>
-          <div className="welcome_text">
+          <div className="welcome_text md:block hidden">
             {
               isAuthenticated ? <span>Hello {user.first_name ?? user.email} ! Welcome to NextAuth</span> : <span>Hello, you&apos;re not loggedin !</span>
             }
@@ -93,19 +95,24 @@ const Index = () => {
               >Log in / Sign up</button>
           }
         </div>
-        <div className="home_box flex items-start justify-center gap-10 mt-20">
+        <div className="home_box flex items-center justify-center md:gap-10 md:mt-20 mt-10 w-min md:w-full">
           <div className="home_left_sec text-[#333333]">
-            <div className='flex items-center gap-5'>
-              <Image src={ViteSvg} alt="nextAuth logo" className='w-12 h-12' />
-              <h1 className='text-5xl font-extrabold'>
+            <div className="welcome_text md:hidden block mb-3">
+              {
+                isAuthenticated ? <span>Hello {user.first_name ?? user.email} ! Welcome to</span> : <span>Hello, you&apos;re not loggedin !</span>
+              }
+            </div>
+            <div className='flex items-center lg:gap-5 gap-3'>
+              <Image src={ViteSvg} alt="nextAuth logo" className='lg:w-12 lg:h-12' />
+              <h1 className='lg:text-5xl text-4xl font-extrabold'>
                 <span className='text-[#6C63FF]'>Next</span>
                 Auth
               </h1>
             </div>
             <div className='mt-5'>
-              <h3 className='text-lg'>NextAuth is a powerful and secure Authentication system <br />
+              <h3 className='lg:text-lg'>NextAuth is a powerful and secure Authentication system <br />
                 made with Django and React js.</h3>
-              <h3 className='mt-4'>A perfect Auth system for your project.</h3>
+              <h3 className='lg:mt-4 mt-2'>A perfect Auth system for your project.</h3>
             </div>
 
             <hr className='my-6' />
@@ -115,7 +122,7 @@ const Index = () => {
                 {user ? 'Give me a feedback' : 'Log in to give me a feedback'}
                 <BsStars color='#075BDB' />
               </h3>
-              <form className='mt-2 flex flex-col w-[25rem]' onSubmit={handleReviewSubmit}>
+              <form className='mt-2 flex flex-col lg:w-[25rem] w-[20rem]' onSubmit={handleReviewSubmit}>
                 <textarea
                   disabled={!user}
                   value={review}
@@ -146,8 +153,8 @@ const Index = () => {
               </form>
             </div>
           </div>
-          <div className="home_image_sec">
-            <Image className='w-[30rem]' src={HomeSvg} alt="Home page svg" />
+          <div className="home_image_sec md:block hidden">
+            <Image className='lg:w-[30rem] w-[20rem]' src={HomeSvg} alt="Home page svg" />
           </div>
         </div>
         <AnimatePresence>
@@ -155,6 +162,8 @@ const Index = () => {
           {showAuthModal && <AuthModal />}
         </AnimatePresence>
       </div>
+
+      {loading && <Loading />}
     </>
   )
 }

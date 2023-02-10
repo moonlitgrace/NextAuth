@@ -38,9 +38,9 @@ export const ChangePassword = () => {
             transition={{ duration: 0.09 }}
 
             className="change_password_container absolute inset-0 bg-black/25 flex items-center justify-center">
-            <div className="change_password_box bg-white drop-shadow-xl w-1/2 h-3/5 rounded-lg p-5 flex gap-5">
+            <div className="change_password_box bg-white drop-shadow-xl md:w-1/2 w-[21rem] md:h-3/5 rounded-lg p-5 flex gap-5 relative">
                 {/** change password left section */}
-                <div className="left_sec w-1/2 flex flex-col justify-between">
+                <div className="left_sec lg:w-1/2 flex flex-col justify-between">
                     <div className="content text-[#333333]">
                         <h2 className='text-2xl font-semibold'>Change password</h2>
                         <p className='opacity-75'>Set a new password for your account</p>
@@ -92,10 +92,12 @@ export const ChangePassword = () => {
                 </div>
 
                 {/** illustration section */}
-                <div className="illu_container w-1/2 flex flex-col items-end justify-between">
+                <div className="illu_container w-1/2 hidden lg:flex flex-col items-end justify-between">
                     <CgClose onClick={toggleChangePasswordView} size={22} className='stroke-1 opacity-50 hover:opacity-75 duration-100 cursor-pointer' />
                     <Image src={ChangePassSvg} className='w-auto h-auto' alt="Illustration" />
                 </div>
+                {/** close btn */}
+                <CgClose onClick={toggleChangePasswordView} size={22} className='stroke-1 block lg:hidden text-stone-900 opacity-80 hover:opacity-100 duration-100 cursor-pointer absolute right-4 top-4' />
             </div>
         </motion.div>
     )

@@ -34,8 +34,8 @@ export const SignupComp = () => {
     }
 
     return (
-        <div className="login_form md:w-1/2 flex items-center justify-center flex-col">
-            <div className='w-3/4'>
+        <div className="login_form lg:w-1/2 flex items-center justify-center flex-col">
+            <div className='lg:w-3/4'>
                 <div className="header w-full">
                     <div className="logo flex items-center gap-2">
                         <Image className='w-5' src={ViteSvg} alt="" />

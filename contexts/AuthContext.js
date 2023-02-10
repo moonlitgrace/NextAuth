@@ -291,6 +291,8 @@ export const AuthProvider = ({ children }) => {
 
     // data context 
     const contextData = {
+        loading: loading,
+        
         user: user,
         isAuthenticated: isAuthenticated,
         isLoging: isLoging,
@@ -332,7 +334,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={contextData}>
-            {loading ? <Loading /> : children}
+            {children}
         </AuthContext.Provider>
     )
 }
