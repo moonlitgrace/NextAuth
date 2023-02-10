@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast'
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <GoogleOAuthProvider clientId='26689435518-i9nue5c1dqo4i35citvu81ua1tcmgu4i.apps.googleusercontent.com'>
+      <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
         <AuthProvider>
           <Toaster />
           <Component {...pageProps} />
