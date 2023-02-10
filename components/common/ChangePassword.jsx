@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { useContext } from 'react'
 import { AuthContext } from '@/contexts/AuthContext'
 import { BeatLoader } from 'react-spinners'
+import Image from 'next/image'
 
 export const ChangePassword = () => {
 
@@ -45,7 +46,7 @@ export const ChangePassword = () => {
 
                         <h3 className="mt-5">Keep in mind :</h3>
                         <ul className='text-sm list-disc ml-7 mt-1 opacity-90'>
-                            <li>New password shouldn't be same as current password</li>
+                            <li>New password shouldn&apos;t be same as current password</li>
                             <li>Please enter current password correctly</li>
                         </ul>
                     </div>
@@ -92,7 +93,7 @@ export const ChangePassword = () => {
                 {/** illustration section */}
                 <div className="illu_container w-1/2 flex flex-col items-end justify-between">
                     <CgClose onClick={toggleChangePasswordView} size={22} className='stroke-1 opacity-50 hover:opacity-75 duration-100 cursor-pointer' />
-                    <img src='/change_password.svg' className='w-auto h-auto' alt="Illustration" />
+                    <Image src='/change_password.svg' className='w-auto h-auto' alt="Illustration" />
                 </div>
             </div>
         </motion.div>

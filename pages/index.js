@@ -11,6 +11,8 @@ import { IoMdSend } from 'react-icons/io'
 // import components
 import { ChangePassword } from '@/components/common/ChangePassword'
 import { AuthModal } from '@/components/common/AuthModal'
+import { BeatLoader } from 'react-spinners'
+import Image from 'next/image'
 
 const Index = () => {
 
@@ -42,7 +44,7 @@ const Index = () => {
       console.log(code)
       githubLogin(code)
     }
-  }, [])
+  })
 
   return (
     <>
@@ -66,7 +68,7 @@ const Index = () => {
           </div>
           <div className="welcome_text">
             {
-              isAuthenticated ? <span>Hello {user.first_name ?? user.email} ! Welcome to NextAuth</span> : <span>Hello, you're not loggedin !</span>
+              isAuthenticated ? <span>Hello {user.first_name ?? user.email} ! Welcome to NextAuth</span> : <span>Hello, you&apos;re not loggedin !</span>
             }
           </div>
           {
@@ -91,7 +93,7 @@ const Index = () => {
         <div className="home_box flex items-start justify-center gap-10 mt-20">
           <div className="home_left_sec text-[#333333]">
             <div className='flex items-center gap-5'>
-              <img src="/vite.svg" alt="nextAuth logo" className='w-12 h-12' />
+              <Image src="/vite.svg" alt="nextAuth logo" className='w-12 h-12' />
               <h1 className='text-5xl font-extrabold'>
                 <span className='text-[#6C63FF]'>Next</span>
                 Auth
@@ -142,7 +144,7 @@ const Index = () => {
             </div>
           </div>
           <div className="home_image_sec">
-            <img className='w-[30rem]' src='/home_page.svg' alt="Home page svg" />
+            <Image className='w-[30rem]' src='/home_page.svg' alt="Home page svg" />
           </div>
         </div>
         <AnimatePresence>

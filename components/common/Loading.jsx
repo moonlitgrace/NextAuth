@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import { BarLoader } from 'react-spinners'
 
@@ -6,7 +7,7 @@ export const Loading = () => {
         <div className="loading_container w-screen h-screen flex items-center justify-center">
             <div className="loading_box flex flex-col items-center justify-center">
                 <div className='flex items-center gap-3 mb-5 text-[#333333]'>
-                    <img src="/vite.svg" alt="nextAuth logo" className='w-8 h-8' />
+                    <Image src="/vite.svg" alt="nextAuth logo" className='w-8 h-8' />
                     <h2 className='text-3xl font-extrabold'>
                         <span className='text-[#6C63FF]'>Next</span>
                         Auth

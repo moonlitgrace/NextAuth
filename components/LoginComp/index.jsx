@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { BeatLoader } from 'react-spinners'
 import { useContext } from 'react'
 import { AuthContext } from '@/contexts/AuthContext'
+import Image from 'next/image'
 
 export const LoginComp = () => {
 
@@ -36,7 +37,7 @@ export const LoginComp = () => {
             <div className='w-3/4'>
                 <div className="header w-full">
                     <Link href={'/'} className="logo flex items-center gap-2">
-                        <img className='w-5' src='/vite.svg' alt="" />
+                        <Image className='w-5' src='/vite.svg' alt="" />
                         <h1 className='font-semibold text-[#075BDB]'>NextAuth</h1>
                     </Link>
                     <div className="intro mt-4">
@@ -102,7 +103,7 @@ export const LoginComp = () => {
 
                     <center className='mt-3'>
                         <span className='text-sm text-stone-800/75 flex gap-2 items-center justify-center'>
-                            Don't have an account ?
+                            Don&apos;t have an account ?
                             <button onClick={toggleSignupLoginView}>
                                 <span className='text-[#065AD8] font-medium hover:text-[#0551c1]'>
                                     Create an account</span>
