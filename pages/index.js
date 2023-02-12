@@ -66,10 +66,10 @@ const Index = () => {
         <div className="navabr bg-[#333333] p-5 flex justify-between items-center text-white w-full">
           <div className="logo flex items-center gap-10">
             <h2 className='text-[1.3rem] font-bold'>NextAuth</h2>
-            <Link
-              href='/'
+            <a
+              href='https://github.com/suneethsunx/NextAuth'
               className='md:block hidden opacity-75 hover:opacity-100 duration-100'
-            >Github</Link>
+            >Github</a>
           </div>
           <div className="welcome_text md:block hidden">
             {
