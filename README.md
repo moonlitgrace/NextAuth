@@ -29,5 +29,5 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 ## Deployed on Vercel
 This was deployed on vercel, yeah it's live ! <br />
-[https://nextauth-dj.vercel.app](https://nextauth-dj.vercel.app) <br />
+[Live demo](https://nextauth-dj.vercel.app) <br />
 > Please wait until the server loads...
