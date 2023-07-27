@@ -7,7 +7,7 @@ It has Google and Github social authentication too... And it comes with awesome 
 [@react-oauth/google](https://www.npmjs.com/package/@react-oauth/google) - for Google login <br />
 [tailwindcss](https://tailwindcss.com/) - for UI <br />
 
-> Checkout the backend for this [NextAuth-backend](https://github.com/suneethsunx/NextAuth-backend)
+> Checkout the backend for this [NextAuth-api](https://github.com/tokitou-san/NextAuth-api)
 
 ## Getting Started
 Clone this repo and `cd <repo name>/`
