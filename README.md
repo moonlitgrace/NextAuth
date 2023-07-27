@@ -1,4 +1,4 @@
-## NextAuth - a secure and powerful authentication system
+# NextAuth - a secure and powerful authentication system
 NextAuth is using httpOnly cookies for authentication, so this is more secure than authentication with localStorage <br />
 It has Google and Github social authentication too... And it comes with awesome UI ...
 
